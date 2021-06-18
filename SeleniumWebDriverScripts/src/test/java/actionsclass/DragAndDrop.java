@@ -17,9 +17,9 @@ public class DragAndDrop {
 		WebElement source = driver.findElement(By.xpath("//*[@id='box6']"));
 		WebElement target = driver.findElement(By.xpath("//*[@id='box107']"));
 		Actions act = new Actions(driver);
-		// act.clickAndriverHoldriver(source).moveToElement(target).release().buildriver().perform();
-		// // First methodriver
-		act.dragAndDrop(source, target).build().perform(); // Secondriver methodriver
+		//act.clickAndHold(source).moveToElement(target).release().build().perform();
+		//First method
+		act.dragAndDrop(source, target).build().perform(); // Second method
 		Thread.sleep(2000);
 		driver.close();
 	}
