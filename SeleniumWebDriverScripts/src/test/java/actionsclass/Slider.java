@@ -10,14 +10,14 @@ public class Slider {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver", "./Drivers//chromedriver.exe");
-		WebDriver d = new ChromeDriver();
-		d.manage().window().maximize();
-		d.get("https://jqueryui.com/slider/");
-		d.switchTo().frame(0);
-		WebElement slideElement = d
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://jqueryui.com/slider/");
+		driver.switchTo().frame(0);
+		WebElement slideElement = driver
 				.findElement(By.xpath("//span[@class='ui-slider-handle ui-corner-all ui-state-default']"));
-		Actions actionsSlide = new Actions(d);
+		Actions actionsSlide = new Actions(driver);
 		actionsSlide.dragAndDropBy(slideElement, 100, 0).perform();
-		d.close();
+		driver.close();
 	}
 }
