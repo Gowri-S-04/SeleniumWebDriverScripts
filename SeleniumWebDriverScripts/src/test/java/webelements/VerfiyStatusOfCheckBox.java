@@ -10,10 +10,10 @@ public class VerfiyStatusOfCheckBox {
 	public static void main(String[] args) {
 
 		System.setProperty("webdriver.chrome.driver", "./Drivers//chromedriver.exe");
-		WebDriver d = new ChromeDriver();
-		d.manage().window().maximize();
-		d.get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
-		WebElement rememberme = d.findElement(By.xpath("//*[@id=\"RememberMe\"]"));
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F");
+		WebElement rememberme = driver.findElement(By.xpath("//*[@id=\"RememberMe\"]"));
 		// verify check box is displayed in page or not
 		if (rememberme.isDisplayed()) {
 			System.out.println("Checkbox is Displayed");
@@ -41,6 +41,6 @@ public class VerfiyStatusOfCheckBox {
 		} else {
 			System.out.println("CheckBox is Not Selected");
 		}
-		d.close();
+		driver.close();
 	}
 }
