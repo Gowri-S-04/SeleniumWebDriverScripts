@@ -10,10 +10,10 @@ public class VerifyDropDown {
 	public static void main(String[] args) {
 
 		System.setProperty("webdriver.chrome.driver", ".//Drivers//chromedriver.exe");
-		WebDriver d = new ChromeDriver();
-		d.get("http://demo.guru99.com/test/newtours/register.php");
+		WebDriver driver = new ChromeDriver();
+		driver.get("http://demo.guru99.com/test/newtours/register.php");
 		// select specified option using select class
-		Select country = new Select(d.findElement(By.name("country")));
+		Select country = new Select(driver.findElement(By.name("country")));
 		if (country.isMultiple()) {
 			country.selectByIndex(3);
 			country.selectByValue("AMERICAN SAMOA");
@@ -22,9 +22,9 @@ public class VerifyDropDown {
 		} else {
 			System.out.println("Dropdown is a single select DropDown");
 		}
-		d.get("http://jsbin.com/osebed/2");
+		driver.get("http://jsbin.com/osebed/2");
 
-		Select fruits = new Select(d.findElement(By.id("fruits")));
+		Select fruits = new Select(driver.findElement(By.id("fruits")));
 		if (fruits.isMultiple()) {
 			// multiple values select
 			fruits.selectByIndex(1);
@@ -38,6 +38,6 @@ public class VerifyDropDown {
 		} else {
 			System.out.println("Dropdown is a single select DropDown");
 		}
-		d.close();
+		driver.close();
 	}
 }
